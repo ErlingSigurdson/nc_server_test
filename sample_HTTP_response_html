@@ -1,0 +1,13 @@
+HTTP/1.1 200 OK
+Content-Type: text/html; charset=utf-8
+
+<!DOCTYPE html>
+<html>
+	<head>
+	    <meta content=\"text/html; charset=utf-8\">
+	    <title>nc_server_test_with_http_and_html</title>
+	</head>
+    <body>
+	    <p style=\"color:blue;text-align:center\">Hello there! HTML has been served.</p>
+	</body>
+</html>
