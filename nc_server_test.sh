@@ -27,10 +27,10 @@ MODE=CONTINUOUS
 #--- Implementation ---#
 
 # Node.js
-PROGRAM="/bin/nodejs /home/erling1/IT_playground/nc_server_test/nc_server_test.js"
+#PROGRAM="/bin/nodejs /home/erling1/IT_playground/nc_server_test/nc_server_test.js"
 
 # C language
-#PROGRAM="/home/erling1/IT_playground/nc_server_test/nc_server_test"
+PROGRAM="/home/erling1/IT_playground/nc_server_test/nc_server_test"
 
 
 #--- Execution ---#
@@ -39,12 +39,12 @@ echo -e "Starting nc_server_test, using $NC, mode $MODE\n"
 
 ### Single-shot
 if [ "$MODE" = "SINGLE-SHOT" ]; then
-    sudo $NC -l -p $PORT -c "$PROGRAM"
+    $NC -l -p $PORT -c "$PROGRAM"
 fi
 
 ### Continuous
 if [ "$MODE" = "CONTINUOUS" ]; then
     while true; do
-        sudo $NC -l -p $PORT -c "$PROGRAM"
+        $NC -l -p $PORT -c "$PROGRAM"
     done &
 fi

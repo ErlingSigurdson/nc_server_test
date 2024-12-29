@@ -1,0 +1,14 @@
+General notes:
+- edit nc_server_test.sh to set configs;
+- run Make before starting a server if you're willing to use the backend program written in C (in order to build it from source);
+- run 'chmod +x *.sh nc_server_test' to make all shell scripts and a backend program written in C executable;
+- run run_nc_server_test.sh using sudo to start a server.
+
+Requirements are:
+- ncat (recommended) or nc.traditional (not recommended);
+- Node.js (if you're going to run a script for it);
+- gcc + Make (if you're going to run the program written in C).
+
+Using sudo to run run_nc_server_test.sh is required because root privileges will be necessary for looped calls inside a script.
+
+Actually it's possible to add 'sudo' into run_nc_server_test.sh itself (make it 'nohup sudo ...') so that all subsequent commands would enjoy root privileges. In case of this particular project it worked OK. But in the general case I would advice to call a 'run'-type script using sudo instead of adding 'sudo' into it, because multiple 'sudo's in a single script used to cause troubles in my experience.
